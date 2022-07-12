@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"> -->
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>store, ver. 6</title>
+  <!-- https://vadimcodes.github.io/store.github.io/ -->
+</head>
+
+<body class="body">
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <button class="header-content__burger" id="burger">
+          <span class="header-content__burger__span" id="burger-span"></span>
+        </button>
+        <div class="header-content__burger-open burger-open burger" id="burger-open">
+          <ul class="burger__list">
+            <li class="burger__item">
+              <a class="link burger__link" href="#">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4" y="4" width="6" height="6" rx="1" stroke="#2979ff" stroke-linejoin="round" />
+                  <rect x="4" y="14" width="6" height="6" rx="1" stroke="#2979ff" stroke-linejoin="round" />
+                  <rect x="14" y="14" width="6" height="6" rx="1" stroke="#2979ff" stroke-linejoin="round" />
+                  <rect x="14" y="4" width="6" height="6" rx="1" stroke="#2979ff" stroke-linejoin="round" />
+                </svg>
+                <span class="burger__text">Каталог</span>
+              </a>
+            </li>
+            <li class="burger__item">
+              <ul class="burger__sublist">
+                <li class="burger__subitem">
+                  <a class="link burger__link" href="#">
+                    <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                        stroke="#2979ff" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                        stroke="#2979ff" stroke-linecap="round" />
+                    </svg>
+                    <span class="burger__text">Сравнение</span>
+                  </a>
+                </li>
+                <li class="burger__subitem">
+                  <a class="link burger__link" href="#">
+                    <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                        stroke="#2979ff" />
+                    </svg>
+                    <span class="burger__text">Избранное</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="burger__item">
+              <ul class="burger__sublist">
+                <li class="burger__subitem">
+                  <a class="link burger__link" href="#">
+                    <span class="burger__text">О компании</span>
+                  </a>
+                </li>
+                <li class="burger__subitem">
+                  <a class="link burger__link" href="#">
+                    <span class="burger__text">Доставка и оплата</span>
+                  </a>
+                </li>
+                <li class="burger__subitem">
+                  <a class="link burger__link" href="#">
+                    <span class="burger__text">Контакты</span>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+            <li class="burger__item">
+              <ul class="burger__sublist">
+                <li class="burger__subitem">
+                  <a class="link burger__link" href="tel:+79267267206">
+                    <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M17.7071 13.7071L20.3552 16.3552C20.7113 16.7113 20.7113 17.2887 20.3552 17.6448C18.43 19.57 15.3821 19.7866 13.204 18.153L11.6286 16.9714C9.88504 15.6638 8.33622 14.115 7.02857 12.3714L5.84701 10.796C4.21341 8.61788 4.43001 5.56999 6.35523 3.64477C6.71133 3.28867 7.28867 3.28867 7.64477 3.64477L10.2929 6.29289C10.6834 6.68342 10.6834 7.31658 10.2929 7.70711L9.27175 8.72825C9.10946 8.89054 9.06923 9.13846 9.17187 9.34373C10.3585 11.7171 12.2829 13.6415 14.6563 14.8281C14.8615 14.9308 15.1095 14.8905 15.2717 14.7283L16.2929 13.7071C16.6834 13.3166 17.3166 13.3166 17.7071 13.7071Z"
+                        stroke="#2979FF" />
+                    </svg>
+                    <span class="burger__text">+7 926 726 72 06</span>
+                  </a>
+                </li>
+                <li class="burger__subitem">
+                  <a class="link burger__link" href="mailto:info@mail.ru">
+                    <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="4" y="6" width="16" height="12" rx="2" stroke="#2979FF" />
+                      <path d="M4 9L11.1056 12.5528C11.6686 12.8343 12.3314 12.8343 12.8944 12.5528L20 9"
+                        stroke="#2979FF" />
+                    </svg>
+                    <span class="burger__text">info@mail.ru</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <a class="header-content__logo" href="#">
+          <img src="img/logo-desktop.svg" alt="Логотип компании">
+        </a>
+        <nav class="header-content__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="link nav__link" href="#">О компании</a>
+            </li>
+            <li class="nav__item">
+              <a class="link nav__link" href="#">Доставка и оплата</a>
+            </li>
+            <li class="nav__item">
+              <a class="link nav__link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-content__control control">
+          <ul class="header-content__control control__list">
+            <li class="control__item">
+              <a class="link control__link" href="#">
+                <svg class="control__link__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                    stroke="#1D243C" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                    stroke="#1D243C" stroke-linecap="round" />
+                </svg>
+              </a>
+            </li>
+            <li class="control__item">
+              <a class="link control__link" href="#">
+                <svg class="control__link__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                    stroke="#1D243C" />
+                </svg>
+              </a>
+            </li>
+            <li class="control__item">
+              <a class="link control__link" href="#">
+                <svg class="control__link__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12" stroke="#1D243C"
+                    stroke-linecap="round" />
+                  <path
+                    d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                    stroke="#1D243C" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="intro">
+      <div class="container intro-container">
+        <div class="intro__content">
+          <div class="intro__control">
+            <button class="btn btn-primary intro__control__btn-catalog">
+              <svg class="intro__control__btn-catalog__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="6" height="6" rx="1" stroke="white" stroke-linejoin="round" />
+                <rect x="4" y="14" width="6" height="6" rx="1" stroke="white" stroke-linejoin="round" />
+                <rect x="14" y="14" width="6" height="6" rx="1" stroke="white" stroke-linejoin="round" />
+                <rect x="14" y="4" width="6" height="6" rx="1" stroke="white" stroke-linejoin="round" />
+              </svg>
+              Каталог</button>
+            <input class="intro__control__search" type="text" placeholder="Поиск...">
+            <button class="btn btn-primary intro__control__search__btn">
+              <svg class="intro__control__search__btn__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="6" stroke="white" />
+                <path d="M20 20L17 17" stroke="white" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="category">
+      <div class="container category-container">
+        <h2 class="title category-title">Категории</h2>
+        <div class="category-content">
+          <div class="swiper category-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide category-slide">
+                <div class="swiper-slide__content category-slide__content">
+                  <a class="link category-slide__title">Напольные покрытия</a>
+                  <p class="category-slide__subtitle">Ламинат, паркет, плинтус</p>
+                </div>
+              </div>
+              <div class="swiper-slide category-slide">
+                <div class="swiper-slide__content category-slide__content">
+                  <a class="link category-slide__title">Сайдинг</a>
+                  <p class="category-slide__subtitle">Виниловый сайдинг, софиты, фасадные панели</p>
+                </div>
+              </div>
+              <div class="swiper-slide category-slide">
+                <div class="swiper-slide__content category-slide__content">
+                  <a class="link category-slide__title">Террасная доска</a>
+                  <p class="category-slide__subtitle">Решения для террасной доски</p>
+                </div>
+              </div>
+              <div class="swiper-slide category-slide">
+                <div class="swiper-slide__content category-slide__content">
+                  <a class="link category-slide__title">Стеновые панели</a>
+                  <p class="category-slide__subtitle">Панели МДФ или ПВХ, сэндвич-панели, вагонка</p>
+                </div>
+              </div>
+              <div class="swiper-slide category-slide">
+                <div class="swiper-slide__content category-slide__content">
+                  <a class="link category-slide__title">Категория5</a>
+                  <p class="category-slide__subtitle">Описание категории</p>
+                </div>
+              </div>
+              <div class="swiper-slide category-slide">
+                <div class="swiper-slide__content category-slide__content">
+                  <a class="link category-slide__title">Категория6</a>
+                  <p class="category-slide__subtitle">Описание категории</p>
+                </div>
+              </div>
+              <div class="swiper-slide category-slide">
+                <div class="swiper-slide__content category-slide__content">
+                  <a class="link category-slide__title">Категория7</a>
+                  <p class="category-slide__subtitle">Описание категории</p>
+                </div>
+              </div>
+              <div class="swiper-slide category-slide">
+                <div class="swiper-slide__content category-slide__content">
+                  <a class="link category-slide__title">Категория8</a>
+                  <p class="category-slide__subtitle">Описание категории</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-arrow-prev swiper-category-prev"></div>
+          <div class="swiper-arrow-next swiper-category-next"></div>
+        </div>
+        <button class="btn btn-simply category-btn">В каталог
+          <svg class="category-btn__icon" width="24" height="22" viewbox="0 0 24 22" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17.7742 10.6154L18.1143 10.2489L18.5091 10.6154L18.1143 10.9818L17.7742 10.6154ZM6.33914 11.1154C6.063 11.1154 5.83914 10.8915 5.83914 10.6154C5.83914 10.3392 6.063 10.1154 6.33914 10.1154V11.1154ZM14.3027 6.71046L18.1143 10.2489L17.434 10.9818L13.6223 7.44335L14.3027 6.71046ZM18.1143 10.9818L14.3027 14.5203L13.6223 13.7874L17.434 10.2489L18.1143 10.9818ZM17.7742 11.1154H6.33914V10.1154H17.7742V11.1154Z"
+              fill="#2979FF" />
+          </svg>
+        </button>
+      </div>
+    </section>
+    <section class="products">
+      <div class="container">
+        <ul class="products__list">
+          <li class="products__item">
+            <button class="title btn products__btn active" data-path="sale">Акции</button>
+          </li>
+          <li class="products__item">
+            <button class="title btn products__btn" data-path="new">Новинки</button>
+          </li>
+          <li class="products__item">
+            <button class="title btn products__btn" data-path="rec">Рекомендуем</button>
+          </li>
+        </ul>
+        <div class="products-content active" data-target="sale">
+          <div class="swiper products-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/sale/sale-1.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат GreenWald Deluxe Дуб Бриссо</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/sale/sale-2.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Сайдинг виниловый Grand Line Natural-Брус S7</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/sale/sale-3.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат GreenWald Romantica Дуб Капучино</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/sale/sale-4.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Потолок кассетный Cesal Line 3306 Белый Матовый
+                    Profi</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/sale/sale-5.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Террасная доска из ДПК MVT Черный-43</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/sale/sale-6.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Потолок реечный Cesal 010B Золотистый жемчуг</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/sale/sale-7.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат GreenWald Romantica Дуб Ольхон</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/sale/sale-8.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат Imperial Perfect 657 Дуб Дарк Грей</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-arrow-prev swiper-products-prev"></div>
+          <div class="swiper-arrow-next swiper-products-next"></div>
+        </div>
+        <div class="products-content" data-target="new">
+          <div class="swiper products-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/new/new-1.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат Kronospan Castello Classic 8072 Дуб
+                    Ностальгия</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/new/new-2.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат Imperial Fresh 354 Торрея</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/new/new-3.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Сайдинг виниловый Grand Line Amerika Slim D4</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/new/new-4.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Потолок реечный Cesal C01 Жемчужно-белый Глянцевый</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/new/new-5.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Листовая панель МДФ Albico Кирпич белый под покраску</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/new/new-6.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Террасная доска из ДПК Дарней Молочный шоколад-75</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/new/new-7.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат GreenWald Concept Дуб Фортье</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-arrow-prev swiper-products-prev"></div>
+          <div class="swiper-arrow-next swiper-products-next"></div>
+        </div>
+        <div class="products-content" data-target="rec">
+          <div class="swiper products-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/rec/rec-1.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат Kronospan Castello Classic К040 Дуб Дрифтвуд</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/rec/rec-2.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Сайдинг Grand Line Amerika Slim Корабельный брус</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/rec/rec-3.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Потолок реечный Cesal C01 Жемчужно-белый Глянцевый</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/rec/rec-4.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Листовая панель МДФ Albico Кирпич бежевый</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/rec/rec-5.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Листовая панель МДФ Albico Доска старая светлая</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/rec/rec-6.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Террасная доска из ДПК Wooden Deck Коричневый-02</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/rec/rec-7.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат Imperial Perfect 6110 Дуб Беленый</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/products/rec/rec-8.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 599 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат Imperial Perfect 657 Дуб Дарк Грей</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-arrow-prev swiper-products-prev"></div>
+          <div class="swiper-arrow-next swiper-products-next"></div>
+        </div>
+      </div>
+    </section>
+    <section class="trends">
+      <div class="container">
+        <h2 class="title trends__title">В тренде</h2>
+        <div class="trends-content">
+          <div class="swiper trends-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/trends/trend-1.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">999 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат Kronospan Castello Classic К040 Дуб Дрифтвуд</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/trends/trend-2.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">35 руб.</p>
+                  <a class="link card-products__title" href="#">Сайдинг Grand Line Amerika Slim Корабельный брус</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/trends/trend-3.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">25 499 руб.</p>
+                  <a class="link card-products__title" href="#">Потолок реечный Cesal C01 Жемчужно-белый Глянцевый</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/trends/trend-4.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 145 руб.</p>
+                  <a class="link card-products__title" href="#">Листовая панель МДФ Albico Кирпич бежевый</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/trends/trend-5.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">699 руб.</p>
+                  <a class="link card-products__title" href="#">Листовая панель МДФ Albico Доска старая светлая</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/trends/trend-6.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">1 500 руб.</p>
+                  <a class="link card-products__title" href="#">Террасная доска из ДПК Wooden Deck Коричневый-02</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/trends/trend-7.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">3 300 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат Imperial Perfect 6110 Дуб Беленый</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/trends/trend-8.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">1 099 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат Imperial Perfect 657 Дуб Дарк Грей</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide products-slide">
+                <article class="swiper-slide__content card-products">
+                  <a class="link card-products__link" href="#">
+                    <img class="card-products__img" src="img/trends/trend-9.jpg" alt="Изображение товара">
+                  </a>
+                  <p class="card-products__price">2 199 руб.</p>
+                  <a class="link card-products__title" href="#">Ламинат Imperial Perfect 657 Дуб Дарк Грей</a>
+                  <div class="card-products__btn">
+                    <ul class="card-products__control">
+                      <li class="card-products__item">
+                        <button class="btn btn-bay">
+                          <svg class="btn-bay__icon" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12"
+                              stroke="#2979FF" stroke-linecap="round" />
+                            <path
+                              d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z"
+                              stroke="#2979FF" />
+                          </svg>
+                          <span class="btn-bay__naim">В корзину</span>
+                        </button>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M21 6L15.7071 11.2929C15.3166 11.6834 14.6834 11.6834 14.2929 11.2929L12.7071 9.70711C12.3166 9.31658 11.6834 9.31658 11.2929 9.70711L7 14"
+                              stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M3 3V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H21"
+                              stroke="#2979FF" stroke-linecap="round" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="card-products__item">
+                        <a class="card-products__icon" href="#">
+                          <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                              stroke="#2979FF" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-arrow-prev swiper-trends-prev"></div>
+          <div class="swiper-arrow-next swiper-trends-next"></div>
+        </div>
+      </div>
+    </section>
+    <section class="brands">
+      <div class="container">
+        <h2 class="title brands-title">Популярные бренды</h2>
+        <div class="brands-content">
+          <div class="swiper brands-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/kronospan.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/grand_line.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/grand_line.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/kronospan.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/kronospan.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/grand_line.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/grand_line.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/kronospan.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/kronospan.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/grand_line.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/grand_line.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/kronospan.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/kronospan.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/grand_line.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/grand_line.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/kronospan.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/kronospan.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/grand_line.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/grand_line.png" alt="Логотип бренда">
+                </a>
+              </div>
+              <div class="swiper-slide brands-slide">
+                <a class="brands-slide__link" href="#">
+                  <img class="brands-slide__img" src="img/brands/kronospan.png" alt="Логотип бренда">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-arrow-prev swiper-brands-prev"></div>
+          <div class="swiper-arrow-next swiper-brands-next"></div>
+        </div>
+      </div>
+    </section>
+    <section class="benefits">
+      <div class="container container-benefits">
+        <div class="benefits__content">
+          <h2 class="title benefits__title">Наши преимущества</h2>
+          <p class="benefits__subtitle">Значимость этих проблем настолько очевидна, что начало повседневной работы по
+            формированию позиции не даёт нам.</p>
+          <div class="benefits-content">
+            <div class="swiper benefits-swiper">
+              <div class="swiper-wrapper">
+
+
+                <div class="swiper-slide benefits-slide">
+                  <div class="benefits-slide__content">
+                    <h3 class="benefits-slide__title">Большой ассортимент</h3>
+                    <p class="benefits-slide__text">Самые актуальные товары по выгодным ценам</p>
+                  </div>
+                </div>
+
+
+                <div class="swiper-slide benefits-slide">
+                  <div class="benefits-slide__content">
+                    <h3 class="benefits-slide__title">Быстрая доставка</h3>
+                    <p class="benefits-slide__text">Привезем в день заказа,
+                      в любое удобное время</p>
+                  </div>
+                </div>
+
+                <div class="swiper-slide benefits-slide">
+                  <div class="benefits-slide__content">
+                    <h3 class="benefits-slide__title">Консультации</h3>
+                    <p class="benefits-slide__text">Ответим на интересующие вас вопросы</p>
+                  </div>
+                </div>
+                <div class="swiper-slide benefits-slide">
+                  <div class="benefits-slide__content">
+                    <h3 class="benefits-slide__title">Наши поставщики</h3>
+                    <p class="benefits-slide__text">Работаем с постоянными поставщиками</p>
+                  </div>
+                </div>
+                <div class="swiper-slide benefits-slide">
+                  <div class="benefits-slide__content">
+                    <h3 class="benefits-slide__title">Поможем в выборе </h3>
+                    <p class="benefits-slide__text">Подскажем какой товар подойдет именно вам</p>
+                  </div>
+                </div>
+
+                <div class="swiper-slide benefits-slide benefits-slide__more">
+                  <div class="benefits-slide__content">
+                    <a class="link benefits-slide__link" href="">
+                      <span>О компании</span>
+                      <svg width="24" height="22" viewbox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M17.7742 10.6154L18.1143 10.2489L18.5091 10.6154L18.1143 10.9818L17.7742 10.6154ZM6.33914 11.1154C6.063 11.1154 5.83914 10.8915 5.83914 10.6154C5.83914 10.3392 6.063 10.1154 6.33914 10.1154V11.1154ZM14.3027 6.71046L18.1143 10.2489L17.434 10.9818L13.6223 7.44335L14.3027 6.71046ZM18.1143 10.9818L14.3027 14.5203L13.6223 13.7874L17.434 10.2489L18.1143 10.9818ZM17.7742 11.1154H6.33914V10.1154H17.7742V11.1154Z"
+                          fill="#2979FF" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-arrow-prev swiper-benefits-prev"></div>
+          <div class="swiper-arrow-next swiper-benefits-next"></div>
+        </div>
+      </div>
+    </section>
+    <section class="contacts">
+      <div class="container">
+        <h2 class="title contacts__title">Контакты</h2>
+        <div class="contacts__content">
+          <div class="contacts__info">
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <p class="contacts__subtitle">Не стесняйтесь обращаться к нам, если у вас есть вопросы или предложения
+                </p>
+              </li>
+              <li class="contacts__item">
+                <h3 class="contacts__naim">Адрес:</h3>
+                <a class="link contacts__text contacts__link" href="geo:55.969940, 37.746676">г. Москва, Осташковское
+                  шоссе, вл5с1</a>
+              </li>
+              <li class="contacts__item">
+                <h3 class="contacts__naim">Телефон:</h3>
+                <a class="link contacts__text contacts__link" href="tel:+79267267206">+7 495 710-10-10</a>
+              </li>
+              <li class="contacts__item">
+                <h3 class="contacts__naim">E-mail:</h3>
+                <a class="link contacts__text contacts__link" href="mailto:info@kvstore.ru">info@kvstore.ru</a>
+              </li>
+              <li class="contacts__item">
+                <h3 class="contacts__naim">График:</h3>
+                <p class="contacts__text">Ежедневно: с 9:00 до 19:00</p>
+              </li>
+            </ul>
+          </div>
+          <div class="contacts__map" id="map"></div>
+        </div>
+      </div>
+    </section>
+    <section class="follow">
+      <div class="container">
+        <h2 class="title follow__title">Подпишитесь на наши новости</h2>
+        <p class="follow__subtitle">Направим информацию об акциях и новых поступлениях, без спама и рекламы</p>
+        <div class="follow__form">
+          <input class="follow__input" type="text" placeholder="Введите ваш e-mail...">
+          <button class="btn btn-primary follow__send">
+            <span class="follow__send-txt">Отправить</span>
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M9.93929 12.6465L7.69205 11.8975L7.69205 11.8975L7.69204 11.8975C5.33883 11.1131 4.16223 10.7209 4.16223 10.0001C4.16223 9.27934 5.33884 8.88713 7.69205 8.10273L16.2052 5.26501C17.861 4.71308 18.6889 4.43711 19.1259 4.87413C19.5629 5.31114 19.287 6.13904 18.735 7.79483L15.8973 16.308L15.8973 16.308L15.8973 16.308C15.1129 18.6612 14.7207 19.8378 14 19.8378C13.2792 19.8378 12.887 18.6612 12.1026 16.308L11.3535 14.0608L15.7071 9.7072C16.0976 9.31668 16.0976 8.68351 15.7071 8.29299C15.3165 7.90246 14.6834 7.90246 14.2928 8.29299L9.93929 12.6465Z"
+                fill="white" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__body">
+        <div class="footer__content">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <p class="footer__title">Карта сайта</p>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">О компании</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Доставка и оплата</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Контакты</a>
+            </li>
+          </ul>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <p class="footer__title">Каталог</p>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Ламинат</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Террасная доска</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Дренажные системы</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Стеновые панели</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Подоконники</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Сайдинг</a>
+            </li>
+          </ul>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <p class="footer__title">Покупателям</p>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Ссылка1</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Ссылка2</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Ссылка3</a>
+            </li>
+          </ul>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <p class="footer__title">Мы в соц. сетях</p>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Telegram</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="#">VK</a>
+            </li>
+          </ul>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <p class="footer__title">Контакты</p>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="tel:+79267267206">+7 926 726 72 06</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="mailto:info@mail.ru">info@mail.ru</a>
+            </li>
+            <li class="footer__item">
+              <p class="footer__link" href="#">г. Москва, Осташковское шоссе, вл5с1</p>
+            </li>
+            <li class="footer__item">
+              <p class="footer__link" href="#">Ежедневно: с 9:00 до 19:00</p>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__mob">
+          <p class="footer__subtitle">
+            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вопроса предложения они
+            текст маленькая рекламных имени города вершину своих рукопись большой переулка рыбными, даже, журчит
+            агентство грамматики назад дорогу.
+          </p>
+          <div class="footer__accordion" id="accordion">
+            <h3 class="footer__title">Карта сайта
+              <span class="footer__icon">+</span>
+            </h3>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="link footer__link" href="#">О компании</a>
+              </li>
+              <li class="footer__item">
+                <a class="link footer__link" href="#">Доставка и оплата</a>
+              </li>
+              <li class="footer__item">
+                <a class="link footer__link" href="#">Контакты</a>
+              </li>
+            </ul>
+            <h3 class="footer__title">Каталог
+              <span class="footer__icon">+</span>
+            </h3>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="link footer__link" href="#">О компании</a>
+              </li>
+              <li class="footer__item">
+                <a class="link footer__link" href="#">Доставка и оплата</a>
+              </li>
+              <li class="footer__item">
+                <a class="link footer__link" href="#">Контакты</a>
+              </li>
+            </ul>
+            <h3 class="footer__title">Покупателям
+              <span class="footer__icon">+</span>
+            </h3>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="link footer__link" href="#">Ссылка1</a>
+              </li>
+              <li class="footer__item">
+                <a class="link footer__link" href="#">Ссылка2</a>
+              </li>
+              <li class="footer__item">
+                <a class="link footer__link" href="#">Ссылка3</a>
+              </li>
+            </ul>
+            <h3 class="footer__title">Мы в соц. сетях
+              <span class="footer__icon">+</span>
+            </h3>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="link footer__link" href="#">Telegram</a>
+              </li>
+              <li class="footer__item">
+                <a class="link footer__link" href="#">VK</a>
+              </li>
+            </ul>
+            <h3 class="footer__title">Контакты
+              <span class="footer__icon">+</span>
+            </h3>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="link footer__link" href="tel:+79267267206">+7 926 726 72 06</a>
+              </li>
+              <li class="footer__item">
+                <a class="link footer__link" href="mailto:info@mail.ru">info@mail.ru</a>
+              </li>
+              <li class="footer__item">
+                <p class="footer__link" href="#">г. Москва, Осташковское шоссе, вл5с1</p>
+              </li>
+              <li class="footer__item">
+                <p class="footer__link" href="#">Ежедневно: с 9:00 до 19:00</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/burger.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=84cf22ff-1c1c-4675-ab49-b06406b835c1&lang=ru_RU"
+    type="text/javascript"></script>
+
+  <script type="text/javascript">
+    ymaps.ready(init);
+    function init() {
+      var myMap = new ymaps.Map("map", {
+        center: [55.969940, 37.746676],
+        zoom: 12
+      });
+      var myGeoObject = new ymaps.GeoObject({
+        geometry: {
+          type: "Point",
+          coordinates: [55.969940, 37.746676]
+        }
+      });
+      myMap.geoObjects.add(myGeoObject);
+    }
+  </script>
+
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#accordion").accordion({
+        collapsible: true,
+        heightStyle: "content",
+
+      });
+    });
+  </script>
+
+</body>
+
+</html>
